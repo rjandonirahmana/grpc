@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "./calculatorb";
+
+message Request {
+    int32 nilai1 = 1;
+    int32 nilai2 = 2;
+}
+
+message Response {
+    int32 hasil = 1;
+
+}
+
+service CalculatorService {
+    rpc tambah (Request)  returns (Response) {};
+    rpc kali (Request) returns (Response) {};
+}
